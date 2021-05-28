@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Time_Needed_to_Inform_All_Employees/target/debug/Time_Needed_to_Inform_All_Employees: /home/wangjun/hobby/rust/leet_code/Time_Needed_to_Inform_All_Employees/src/main.rs
