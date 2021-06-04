@@ -3,59 +3,43 @@ struct Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    fn rc(conns: &mut Vec<Vec<i32>>, target: i32, stack: &mut Vec<(Vec<i32>, bool)>, set: &mut HashSet<i32>) {
-        let mut next: Vec<Vec<i32>> = Vec::new();
-        while let Some(idx) = conns.iter().position(|v| v[0] == target || v[1] == target) {
-            next.push(conns.remove(idx));
-        }
-        for n in next {
-            if n[0] == target {
-                stack.push((vec![n[0], n[1]], false));
-                if set.contains(&n[1]) {
-                    for (e, v) in stack.iter_mut().rev() {
-                        *v = true;
-                        if e[0] == n[1] {
-                            break;
-                        }
-                    }
-                } else {
-                    set.insert(n[1]);
-                    Solution::rc(conns, n[1], stack, set);
+    fn dfs(id: &mut i32, graph: &Vec<Vec<i32>>, ids: &mut Vec<i32>, low: &mut Vec<i32>, cur: i32, parent: i32, bridges: &mut Vec<Vec<i32>>) {
+        ids[cur as usize] = *id;
+        low[cur as usize] = *id;
+        *id += 1;
+        for n in &graph[cur as usize] {
+            if n == &parent {
+                continue;
+            }
+            if ids[*n as usize] == -1 {
+                Solution::dfs(id, graph, ids, low, *n, cur, bridges);
+                low[cur as usize] = low[cur as usize].min(low[*n as usize]);
+                if ids[cur as usize] < low[*n as usize] {
+                    bridges.push(vec![cur, *n]);
                 }
             } else {
-                stack.push((vec![n[1], n[0]], false));
-                if set.contains(&n[0]) {
-                    for (e, v) in stack.iter_mut().rev() {
-                        *v = true;
-                        if e[0] == n[0] {
-                            break;
-                        }
-                    }
-                } else {
-                    set.insert(n[0]);
-                    Solution::rc(conns, n[0], stack, set);
-                }
+                low[cur as usize] = low[cur as usize].min(ids[*n as usize]);
             }
         }
     }
-    pub fn critical_connections(n: i32, mut connections: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        let mut stack: Vec<(Vec<i32>, bool)> = Vec::new();
-        let mut set: HashSet<i32> = HashSet::new();
-        let start = connections.pop().unwrap();
-        let target = start[1];
-        set.insert(start[0]);
-        set.insert(start[1]);
-        stack.push((start, false));
-        Solution::rc(&mut connections, target, &mut stack, &mut set);
-        println!("{:?}", stack);
-        stack.into_iter().filter_map(|(e, v)| if !v { Some(e) } else { None }).collect()
+    pub fn critical_connections(n: i32, connections: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        let mut graph = vec![Vec::new(); n as usize];
+        for conn in connections {
+            graph[conn[0] as usize].push(conn[1]);
+            graph[conn[1] as usize].push(conn[0]);
+        }
+        let mut id = 0;
+        let mut ids = vec![-1; n as usize];
+        let mut low = vec![-1; n as usize];
+        let mut bridges = Vec::new();
+        for i in 0..graph.len() {
+            Solution::dfs(&mut id, &graph, &mut ids, &mut low, i as i32, -1, &mut bridges);
+        }
+        bridges
     }
 }
 fn main() {
-    println!(
-        "{:?}",
-        Solution::critical_connections(4, vec![vec![0, 1], vec![1, 2], vec![2, 0], vec![1, 3], vec![3, 4], vec![4, 5], vec![5, 3]])
-    );
+    println!("{:?}", Solution::critical_connections(4, vec![vec![0, 1], vec![1, 2], vec![2, 0], vec![1, 3]]));
 }
 
 // 4->0->1->4!
