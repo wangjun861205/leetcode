@@ -7,9 +7,8 @@ impl Solution {
         let set: HashSet<i32> = nums.into_iter().collect();
         let mut ans = 0;
         for n in &set {
-            let mut count = 0;
             if !set.contains(&(*n - 1)) {
-                count = 1;
+                let mut count = 1;
                 let mut next = *n + 1;
                 while set.contains(&next) {
                     count += 1;
