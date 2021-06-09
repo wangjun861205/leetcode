@@ -1,0 +1,9 @@
+[package]
+name = "Alert_Using_Same_Key-Card_Three_or_More_Times_in_a_One_Hour_Period"
+version = "0.1.0"
+authors = ["wangjun861205 <444055828@qq.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
