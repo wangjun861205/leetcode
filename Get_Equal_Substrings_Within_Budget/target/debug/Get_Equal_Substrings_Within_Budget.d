@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Get_Equal_Substrings_Within_Budget/target/debug/Get_Equal_Substrings_Within_Budget: /home/wangjun/hobby/rust/leet_code/Get_Equal_Substrings_Within_Budget/src/main.rs

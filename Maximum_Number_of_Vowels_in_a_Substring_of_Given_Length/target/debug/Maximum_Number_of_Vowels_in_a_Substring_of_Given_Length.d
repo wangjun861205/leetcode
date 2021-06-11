@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length/target/debug/Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length: /home/wangjun/hobby/rust/leet_code/Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length/src/main.rs
