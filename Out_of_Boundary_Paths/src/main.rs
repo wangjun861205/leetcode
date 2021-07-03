@@ -1,66 +1,40 @@
 struct Solution;
 
-use std::collections::HashMap;
-use std::collections::HashSet;
-
 impl Solution {
-    fn dfs(
-        m: i32,
-        n: i32,
-        max_move: i32,
-        start_row: i32,
-        start_column: i32,
-        target_row: i32,
-        target_column: i32,
-        mut visited: HashSet<(i32, i32)>,
-        cache: &mut HashMap<(i32, i32, i32, i32, i32), i32>,
-    ) -> i32 {
-        if start_row == target_row && start_column == target_column {
-            return 1;
-        }
-        if max_move == 1 {
-            return 0;
-        }
-        if start_row < 0 || start_row == m || start_column < 0 || start_column == n {
-            return 0;
-        }
-        // if visited.contains(&(start_row, start_column)) {
-        //     return 0;
-        // }
-        // visited.insert((start_row, start_column));
-        let top = if let Some(c) = cache.get(&(start_row - 1, start_column, target_row, target_column, max_move - 1)) {
-            *c
-        } else {
-            Solution::dfs(m, n, max_move - 1, start_row - 1, start_column, target_row, target_column, visited.clone(), cache)
-        };
-        let bottom = if let Some(c) = cache.get(&(start_row + 1, start_column, target_row, target_column, max_move - 1)) {
-            *c
-        } else {
-            Solution::dfs(m, n, max_move - 1, start_row + 1, start_column, target_row, target_column, visited.clone(), cache)
-        };
-        let left = if let Some(c) = cache.get(&(start_row, start_column - 1, target_row, target_column, max_move - 1)) {
-            *c
-        } else {
-            Solution::dfs(m, n, max_move - 1, start_row, start_column - 1, target_row, target_column, visited.clone(), cache)
-        };
-        let right = if let Some(c) = cache.get(&(start_row, start_column + 1, target_row, target_column, max_move - 1)) {
-            *c
-        } else {
-            Solution::dfs(m, n, max_move - 1, start_row, start_column + 1, target_row, target_column, visited.clone(), cache)
-        };
-        let ans = top + bottom + left + right;
-        cache.insert((start_row, start_column, target_row, target_column, max_move), ans);
-        ans
-    }
     pub fn find_paths(m: i32, n: i32, max_move: i32, start_row: i32, start_column: i32) -> i32 {
-        let mut cache = HashMap::new();
-        let mut sum: i64 = 0;
-        for row in 0..m {
-            for col in 0..n {
-                let visited = HashSet::new();
+        let mut dp = vec![vec![0; n as usize]; m as usize];
+        let mut ans = 0;
+        let module: i32 = 1000000000 + 7;
+        dp[start_row as usize][start_column as usize] = 1;
+        for _ in 0..max_move {
+            let mut tmp = vec![vec![0; n as usize]; m as usize];
+            for row in 0..m as usize {
+                for col in 0..n as usize {
+                    if row == 0 {
+                        ans = (ans + dp[row][col]) % module;
+                    } else {
+                        tmp[row - 1][col] = (tmp[row - 1][col] + dp[row][col]) % module;
+                    }
+                    if row == m as usize - 1 {
+                        ans = (ans + dp[row][col]) % module;
+                    } else {
+                        tmp[row + 1][col] = (tmp[row + 1][col] + dp[row][col]) % module;
+                    }
+                    if col == 0 {
+                        ans = (ans + dp[row][col]) % module;
+                    } else {
+                        tmp[row][col - 1] = (tmp[row][col - 1] + dp[row][col]) % module;
+                    }
+                    if col == n as usize - 1 {
+                        ans = (ans + dp[row][col]) % module;
+                    } else {
+                        tmp[row][col + 1] = (tmp[row][col + 1] + dp[row][col]) % module;
+                    }
+                }
             }
+            dp = tmp;
         }
-        (sum % (10_i64.pow(9) + 7) as i64) as i32
+        ans
     }
 }
 

@@ -14,30 +14,30 @@ impl ListNode {
     }
 }
 
-use std::ptr::null_mut;
-
 impl Solution {
+    fn rc(head: Option<Box<ListNode>>, left: i32, right: i32, cur: i32, stack: &mut Vec<Box<ListNode>>) -> Option<Box<ListNode>> {
+        if let Some(mut node) = head {
+            let next = node.next.take();
+            if cur < left {
+                let remain = Solution::rc(next, left, right, cur + 1, stack);
+                node.next = remain;
+                return Some(node);
+            } else if cur >= left && cur <= right {
+                stack.push(node);
+                let remain = Solution::rc(next, left, right, cur + 1, stack);
+                let mut rev = stack.remove(0);
+                rev.next = remain;
+                return Some(rev);
+            } else {
+                node.next = next;
+                return Some(node);
+            }
+        }
+        None
+    }
     pub fn reverse_between(mut head: Option<Box<ListNode>>, left: i32, right: i32) -> Option<Box<ListNode>> {
-        let mut pointers: Vec<Box<ListNode>> = Vec::new();
-        while let Some(mut node) = head {
-            let remain = node.next.take();
-            pointers.push(node);
-            head = remain;
-        }
-        let mut l = left as usize - 1;
-        let mut r = right as usize - 1;
-        while l < r {
-            pointers.swap(l, r);
-            l += 1;
-            r -= 1;
-        }
-        let mut h = pointers.pop().unwrap();
-        while pointers.len() > 0 {
-            let mut p = pointers.pop().unwrap();
-            p.next = Some(h);
-            h = p;
-        }
-        Some(h)
+        let mut stack = Vec::new();
+        Solution::rc(head, left, right, 1, &mut stack)
     }
 }
 fn main() {

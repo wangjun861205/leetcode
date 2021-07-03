@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Count_of_Smaller_Numbers_After_Self/target/debug/Count_of_Smaller_Numbers_After_Self: /home/wangjun/hobby/rust/leet_code/Count_of_Smaller_Numbers_After_Self/src/main.rs
