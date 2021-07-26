@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Non-negative_Integers_without_Consecutive_Ones/target/debug/Non-negative_Integers_without_Consecutive_Ones: /home/wangjun/hobby/rust/leet_code/Non-negative_Integers_without_Consecutive_Ones/src/main.rs
