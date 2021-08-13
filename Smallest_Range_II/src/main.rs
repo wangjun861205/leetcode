@@ -5,26 +5,28 @@ use std::collections::BinaryHeap;
 
 impl Solution {
     pub fn smallest_range_ii(mut nums: Vec<i32>, k: i32) -> i32 {
-        nums.sort();
-        let mut min_heap: BinaryHeap<Reverse<i32>> = BinaryHeap::new();
-        let mut max_heap: BinaryHeap<i32> = BinaryHeap::new();
-        min_heap.push(Reverse(nums[0] + k));
-        max_heap.push(nums[0] + k);
-        for n in nums[1..].to_vec() {
-            let plus_diff = n + k - min_heap.peek().unwrap().0;
-            let sub_diff = *max_heap.peek().unwrap() - n + k;
-            if plus_diff < sub_diff {
-                min_heap.push(Reverse(n + k));
-                max_heap.push(n + k);
-            } else {
-                min_heap.push(Reverse(n - k));
-                max_heap.push(n - k);
-            }
+        if nums.len() == 1 {
+            return 0;
         }
-        max_heap.pop().unwrap() - min_heap.pop().unwrap().0
+        nums.sort();
+        let mut ans = 10000;
+        for i in 0..nums.len() {
+            let min_left = nums[0] + k;
+            let min_right = nums[i] + k;
+            if i == nums.len() - 1 {
+                ans = ans.min(min_right - min_left);
+                break;
+            }
+            let add_left = nums[i + 1] - k;
+            let add_right = nums[nums.len() - 1] - k;
+            let min = min_left.min(min_right).min(add_left).min(add_right);
+            let max = min_left.max(min_right).max(add_left).max(add_right);
+            ans = ans.min(max - min);
+        }
+        ans
     }
 }
 
 fn main() {
-    println!("{}", Solution::smallest_range_ii(vec![1, 3, 6], 3));
+    println!("{}", Solution::smallest_range_ii(vec![7, 8, 8], 5));
 }

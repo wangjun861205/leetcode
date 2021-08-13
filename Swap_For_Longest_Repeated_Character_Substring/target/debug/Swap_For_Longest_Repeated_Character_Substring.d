@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Swap_For_Longest_Repeated_Character_Substring/target/debug/Swap_For_Longest_Repeated_Character_Substring: /home/wangjun/hobby/rust/leet_code/Swap_For_Longest_Repeated_Character_Substring/src/main.rs

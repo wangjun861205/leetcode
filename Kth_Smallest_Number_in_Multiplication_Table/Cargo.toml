@@ -1,0 +1,8 @@
+[package]
+name = "Kth_Smallest_Number_in_Multiplication_Table"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

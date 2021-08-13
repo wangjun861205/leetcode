@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Kth_Smallest_Number_in_Multiplication_Table/target/debug/Kth_Smallest_Number_in_Multiplication_Table: /home/wangjun/hobby/rust/leet_code/Kth_Smallest_Number_in_Multiplication_Table/src/main.rs

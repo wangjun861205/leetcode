@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'Split_Two_Strings_to_Make_Palindrome'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=Split_Two_Strings_to_Make_Palindrome",
+					"--package=Split_Two_Strings_to_Make_Palindrome"
+				],
+				"filter": {
+					"name": "Split_Two_Strings_to_Make_Palindrome",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'Split_Two_Strings_to_Make_Palindrome'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=Split_Two_Strings_to_Make_Palindrome",
+					"--package=Split_Two_Strings_to_Make_Palindrome"
+				],
+				"filter": {
+					"name": "Split_Two_Strings_to_Make_Palindrome",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

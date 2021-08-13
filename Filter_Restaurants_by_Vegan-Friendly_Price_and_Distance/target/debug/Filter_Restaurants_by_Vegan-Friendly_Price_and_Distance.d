@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Filter_Restaurants_by_Vegan-Friendly_Price_and_Distance/target/debug/Filter_Restaurants_by_Vegan-Friendly_Price_and_Distance: /home/wangjun/hobby/rust/leet_code/Filter_Restaurants_by_Vegan-Friendly_Price_and_Distance/src/main.rs

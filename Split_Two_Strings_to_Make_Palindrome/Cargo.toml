@@ -1,0 +1,8 @@
+[package]
+name = "Split_Two_Strings_to_Make_Palindrome"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
