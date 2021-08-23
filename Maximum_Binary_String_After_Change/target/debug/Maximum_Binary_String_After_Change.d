@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Maximum_Binary_String_After_Change/target/debug/Maximum_Binary_String_After_Change: /home/wangjun/hobby/rust/leet_code/Maximum_Binary_String_After_Change/src/main.rs
