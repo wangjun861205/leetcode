@@ -1,52 +1,70 @@
 struct Solution;
 impl Solution {
     pub fn push_dominoes(dominoes: String) -> String {
-        let l_to_r: Vec<i32> = dominoes
-            .chars()
-            .scan(0, |s, v| {
-                if v == 'R' {
-                    *s += 1;
-                } else if v == 'L' {
-                    *s -= 1;
-                } else {
-                    if *s > 0 {
-                        *s += 1;
-                    } else if *s < 0 {
-                        *s -= 1;
+        let dominoes: Vec<char> = dominoes.chars().into_iter().collect();
+        let mut result = vec![0; dominoes.len()];
+        let mut second = 1;
+        let mut started = false;
+        for i in 0..dominoes.len() {
+            match dominoes[i] {
+                '.' => {
+                    if started {
+                        result[i] = second;
                     }
                 }
-                Some(*s)
-            })
-            .collect();
-        let r_to_l: Vec<i32> = dominoes
-            .chars()
-            .rev()
-            .scan(0, |s, v| {
-                if v == 'L' {
-                    *s += 1;
-                } else if v == 'R' {
-                    *s -= 1;
-                } else {
-                    if *s > 0 {
-                        *s += 1;
-                    } else if *s < 0 {
-                        *s -= 1;
+                'R' => {
+                    second = 1;
+                    started = true;
+                    result[i] = second;
+                }
+                _ => {
+                    started = false;
+                }
+            }
+            second += 1;
+        }
+        second = -1;
+        started = false;
+        for i in (0..dominoes.len()).rev() {
+            match dominoes[i] {
+                '.' => {
+                    if started {
+                        if result[i] == 0 {
+                            result[i] = second;
+                        } else {
+                            if result[i] + second > 0 {
+                                result[i] = second;
+                            } else if result[i] + second == 0 {
+                                result[i] = 0;
+                                started = false;
+                            }
+                        }
                     }
                 }
-                Some(*s)
-            })
-            .collect();
-        (0..dominoes.len())
-            .map(|i| {
-                if l_to_r[i] == r_to_l[i] {
-                    '.'
-                } else if l_to_r[i] < r_to_l[i] {
+                'L' => {
+                    second = -1;
+                    started = true;
+                    result[i] = second;
+                }
+                _ => {
+                    started = false;
+                }
+            }
+            second -= 1;
+        }
+
+        result
+            .into_iter()
+            .map(|v| {
+                if v > 0 {
+                    'R'
+                } else if v < 0 {
                     'L'
                 } else {
-                    'R'
+                    '.'
                 }
             })
-            .collect::<String>()
+            .collect()
     }
 }
 

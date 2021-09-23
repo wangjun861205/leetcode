@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating/target/debug/Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating: /home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating/src/main.rs

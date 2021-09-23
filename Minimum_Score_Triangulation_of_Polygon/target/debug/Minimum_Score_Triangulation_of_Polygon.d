@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Score_Triangulation_of_Polygon/target/debug/Minimum_Score_Triangulation_of_Polygon: /home/wangjun/hobby/rust/leet_code/Minimum_Score_Triangulation_of_Polygon/src/main.rs

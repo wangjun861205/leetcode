@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Numbers_With_Same_Consecutive_Differences/target/debug/Numbers_With_Same_Consecutive_Differences: /home/wangjun/hobby/rust/leet_code/Numbers_With_Same_Consecutive_Differences/src/main.rs
