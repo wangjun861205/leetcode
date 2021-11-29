@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Sum_of_Absolute_Differences_in_a_Sorted_Array/target/debug/Sum_of_Absolute_Differences_in_a_Sorted_Array: /home/wangjun/hobby/rust/leet_code/Sum_of_Absolute_Differences_in_a_Sorted_Array/src/main.rs

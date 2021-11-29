@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Binary_String_With_SubstringswRepresenting_1_To_N/target/debug/Binary_String_With_SubstringswRepresenting_1_To_N: /home/wangjun/hobby/rust/leet_code/Binary_String_With_SubstringswRepresenting_1_To_N/src/main.rs

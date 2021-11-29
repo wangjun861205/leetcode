@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Work_Sessions_to_Finish_the_Tasks/target/debug/Minimum_Number_of_Work_Sessions_to_Finish_the_Tasks: /home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Work_Sessions_to_Finish_the_Tasks/src/main.rs

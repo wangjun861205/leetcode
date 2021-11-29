@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Deletions_to_Make_String_Balanced/target/debug/Minimum_Deletions_to_Make_String_Balanced: /home/wangjun/hobby/rust/leet_code/Minimum_Deletions_to_Make_String_Balanced/src/main.rs

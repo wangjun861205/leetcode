@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'Check_If_Array_Pairs_Are_Divisible_by_k'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=Check_If_Array_Pairs_Are_Divisible_by_k",
+					"--package=Check_If_Array_Pairs_Are_Divisible_by_k"
+				],
+				"filter": {
+					"name": "Check_If_Array_Pairs_Are_Divisible_by_k",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'Check_If_Array_Pairs_Are_Divisible_by_k'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=Check_If_Array_Pairs_Are_Divisible_by_k",
+					"--package=Check_If_Array_Pairs_Are_Divisible_by_k"
+				],
+				"filter": {
+					"name": "Check_If_Array_Pairs_Are_Divisible_by_k",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

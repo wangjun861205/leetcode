@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Check_If_Array_Pairs_Are_Divisible_by_k/target/debug/Check_If_Array_Pairs_Are_Divisible_by_k: /home/wangjun/hobby/rust/leet_code/Check_If_Array_Pairs_Are_Divisible_by_k/src/main.rs

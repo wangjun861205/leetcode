@@ -1,0 +1,8 @@
+[package]
+name = "Minimum_Total_Space_Wasted_With_K_Resizing_Operations"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

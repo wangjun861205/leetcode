@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Total_Space_Wasted_With_K_Resizing_Operations/target/debug/Minimum_Total_Space_Wasted_With_K_Resizing_Operations: /home/wangjun/hobby/rust/leet_code/Minimum_Total_Space_Wasted_With_K_Resizing_Operations/src/main.rs

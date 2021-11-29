@@ -1,0 +1,5 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Swaps_to_Make_the_Binary_String_Alternating/target/debug/deps/Minimum_Number_of_Swaps_to_Make_the_Binary_String_Alternating-a2805d1fe5b3e9ec.rmeta: src/main.rs
+
+/home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Swaps_to_Make_the_Binary_String_Alternating/target/debug/deps/Minimum_Number_of_Swaps_to_Make_the_Binary_String_Alternating-a2805d1fe5b3e9ec.d: src/main.rs
+
+src/main.rs:

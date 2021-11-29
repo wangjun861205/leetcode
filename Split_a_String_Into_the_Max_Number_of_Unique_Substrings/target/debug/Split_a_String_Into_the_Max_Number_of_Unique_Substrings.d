@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Split_a_String_Into_the_Max_Number_of_Unique_Substrings/target/debug/Split_a_String_Into_the_Max_Number_of_Unique_Substrings: /home/wangjun/hobby/rust/leet_code/Split_a_String_Into_the_Max_Number_of_Unique_Substrings/src/main.rs
