@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Maximum_Alternating_Subsequence_Sum/target/debug/Maximum_Alternating_Subsequence_Sum: /home/wangjun/hobby/rust/leet_code/Maximum_Alternating_Subsequence_Sum/src/main.rs

@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Operations_to_Convert_Number/target/debug/Minimum_Operations_to_Convert_Number: /home/wangjun/hobby/rust/leet_code/Minimum_Operations_to_Convert_Number/src/main.rs

@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Buckets_Required_to_Collect_Rainwater_from_Houses/target/debug/Minimum_Number_of_Buckets_Required_to_Collect_Rainwater_from_Houses: /home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Buckets_Required_to_Collect_Rainwater_from_Houses/src/main.rs

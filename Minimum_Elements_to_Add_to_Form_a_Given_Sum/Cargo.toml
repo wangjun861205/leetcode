@@ -1,0 +1,8 @@
+[package]
+name = "Minimum_Elements_to_Add_to_Form_a_Given_Sum"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

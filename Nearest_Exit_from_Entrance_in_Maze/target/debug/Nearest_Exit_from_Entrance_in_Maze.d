@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Nearest_Exit_from_Entrance_in_Maze/target/debug/Nearest_Exit_from_Entrance_in_Maze: /home/wangjun/hobby/rust/leet_code/Nearest_Exit_from_Entrance_in_Maze/src/main.rs
