@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'Minimum_Number_of_Days_to_Make_m_Bouquets'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=Minimum_Number_of_Days_to_Make_m_Bouquets",
+					"--package=Minimum_Number_of_Days_to_Make_m_Bouquets"
+				],
+				"filter": {
+					"name": "Minimum_Number_of_Days_to_Make_m_Bouquets",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'Minimum_Number_of_Days_to_Make_m_Bouquets'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=Minimum_Number_of_Days_to_Make_m_Bouquets",
+					"--package=Minimum_Number_of_Days_to_Make_m_Bouquets"
+				],
+				"filter": {
+					"name": "Minimum_Number_of_Days_to_Make_m_Bouquets",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

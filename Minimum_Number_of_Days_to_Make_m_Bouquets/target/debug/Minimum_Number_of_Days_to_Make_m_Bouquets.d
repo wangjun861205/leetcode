@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Days_to_Make_m_Bouquets/target/debug/Minimum_Number_of_Days_to_Make_m_Bouquets: /home/wangjun/hobby/rust/leet_code/Minimum_Number_of_Days_to_Make_m_Bouquets/src/main.rs

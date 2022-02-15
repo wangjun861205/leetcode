@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Removing_Minimum_and_Maximum_From_Array/target/debug/Removing_Minimum_and_Maximum_From_Array: /home/wangjun/hobby/rust/leet_code/Removing_Minimum_and_Maximum_From_Array/src/main.rs
