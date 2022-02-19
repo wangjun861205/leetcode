@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Frequency_of_the_Most_Frequent_Element/target/debug/Frequency_of_the_Most_Frequent_Element: /home/wangjun/hobby/rust/leet_code/Frequency_of_the_Most_Frequent_Element/src/main.rs
