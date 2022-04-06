@@ -1,41 +1,24 @@
 struct Solution;
 
+use std::collections::HashMap;
+
 impl Solution {
     pub fn num_subarrays_with_sum(nums: Vec<i32>, goal: i32) -> i32 {
-        let mut matrix = vec![vec![0; nums.len()]; goal as usize + 2];
-        if nums[0] == 0 {
-            matrix[0][0] = 1;
+        let pre_sums: Vec<i32> = nums
+            .into_iter()
+            .scan(0, |s, v| {
+                *s += v;
+                Some(*s)
+            })
+            .collect();
+        let mut ans = 0;
+        let mut counts: HashMap<i32, i32> = vec![(0, 1)].into_iter().collect();
+        for i in 0..pre_sums.len() {
+            let target = pre_sums[i] - goal;
+            ans += counts.get(&target).unwrap_or(&0);
+            *counts.entry(pre_sums[i]).or_insert(0) += 1;
         }
-        for i in 1..nums.len() {
-            if nums[i] == 0 {
-                matrix[0][i] = matrix[0][i - 1] + 1;
-            }
-        }
-        if nums[0] == 1 {
-            matrix[1][0] = 1;
-        }
-        for i in 1..nums.len() {
-            if nums[i] == 1 {
-                matrix[1][i] = matrix[0][i - 1] + 1;
-            } else {
-                matrix[1][i] = matrix[1][i - 1];
-            }
-        }
-        for i in 2..=goal as usize {
-            for j in 1..nums.len() {
-                if nums[j] == 0 {
-                    matrix[i][j] = matrix[i][j - 1]
-                } else {
-                    matrix[i][j] = matrix[i - 1][j - 1]
-                }
-            }
-        }
-        println!("{:?}", matrix);
-        let mut sum = 0;
-        for i in 0..nums.len() {
-            sum += matrix[goal as usize][i]
-        }
-        sum
+        ans
     }
 }
 fn main() {

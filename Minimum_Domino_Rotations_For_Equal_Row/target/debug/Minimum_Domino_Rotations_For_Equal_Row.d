@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Domino_Rotations_For_Equal_Row/target/debug/Minimum_Domino_Rotations_For_Equal_Row: /home/wangjun/hobby/rust/leet_code/Minimum_Domino_Rotations_For_Equal_Row/src/main.rs

@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Cost_Homecoming_of_a_Robot_in_a_Grid/target/debug/Minimum_Cost_Homecoming_of_a_Robot_in_a_Grid: /home/wangjun/hobby/rust/leet_code/Minimum_Cost_Homecoming_of_a_Robot_in_a_Grid/src/main.rs

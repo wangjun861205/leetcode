@@ -1,0 +1,8 @@
+[package]
+name = "Remove_Duplicates_from_Sorted_List_II"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

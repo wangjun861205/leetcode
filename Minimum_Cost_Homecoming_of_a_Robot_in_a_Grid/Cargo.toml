@@ -1,0 +1,8 @@
+[package]
+name = "Minimum_Cost_Homecoming_of_a_Robot_in_a_Grid"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Next_Greater_Numerically_Balanced_Number/target/debug/Next_Greater_Numerically_Balanced_Number: /home/wangjun/hobby/rust/leet_code/Next_Greater_Numerically_Balanced_Number/src/main.rs

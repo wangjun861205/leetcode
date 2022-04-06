@@ -1,0 +1,5 @@
+/home/wangjun/hobby/rust/leet_code/Array_With_Elements_Not_Equal_to_Average_of_Neighbors/target/debug/deps/Array_With_Elements_Not_Equal_to_Average_of_Neighbors-a935e953b31edd61.rmeta: src/main.rs
+
+/home/wangjun/hobby/rust/leet_code/Array_With_Elements_Not_Equal_to_Average_of_Neighbors/target/debug/deps/Array_With_Elements_Not_Equal_to_Average_of_Neighbors-a935e953b31edd61.d: src/main.rs
+
+src/main.rs:

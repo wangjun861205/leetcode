@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'Arithmetic_Slices'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=Arithmetic_Slices",
+					"--package=Arithmetic_Slices"
+				],
+				"filter": {
+					"name": "Arithmetic_Slices",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'Arithmetic_Slices'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=Arithmetic_Slices",
+					"--package=Arithmetic_Slices"
+				],
+				"filter": {
+					"name": "Arithmetic_Slices",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

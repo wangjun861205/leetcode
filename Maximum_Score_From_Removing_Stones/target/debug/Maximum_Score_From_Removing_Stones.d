@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Maximum_Score_From_Removing_Stones/target/debug/Maximum_Score_From_Removing_Stones: /home/wangjun/hobby/rust/leet_code/Maximum_Score_From_Removing_Stones/src/main.rs

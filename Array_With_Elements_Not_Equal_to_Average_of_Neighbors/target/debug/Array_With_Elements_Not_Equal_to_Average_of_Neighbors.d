@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Array_With_Elements_Not_Equal_to_Average_of_Neighbors/target/debug/Array_With_Elements_Not_Equal_to_Average_of_Neighbors: /home/wangjun/hobby/rust/leet_code/Array_With_Elements_Not_Equal_to_Average_of_Neighbors/src/main.rs
