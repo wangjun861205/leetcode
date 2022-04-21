@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Flip_Columns_For_Maximum_Number_of_Equal_Rows/target/debug/Flip_Columns_For_Maximum_Number_of_Equal_Rows: /home/wangjun/hobby/rust/leet_code/Flip_Columns_For_Maximum_Number_of_Equal_Rows/src/main.rs

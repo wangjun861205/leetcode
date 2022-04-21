@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'Split_Array_into_Consecutive_Subsequences'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=Split_Array_into_Consecutive_Subsequences",
+					"--package=Split_Array_into_Consecutive_Subsequences"
+				],
+				"filter": {
+					"name": "Split_Array_into_Consecutive_Subsequences",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'Split_Array_into_Consecutive_Subsequences'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=Split_Array_into_Consecutive_Subsequences",
+					"--package=Split_Array_into_Consecutive_Subsequences"
+				],
+				"filter": {
+					"name": "Split_Array_into_Consecutive_Subsequences",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

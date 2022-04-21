@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Maximum_Product_of_the_Length_of_Two_Palindromic_Subsequences/target/debug/Maximum_Product_of_the_Length_of_Two_Palindromic_Subsequences: /home/wangjun/hobby/rust/leet_code/Maximum_Product_of_the_Length_of_Two_Palindromic_Subsequences/src/main.rs

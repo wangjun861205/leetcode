@@ -1,0 +1,1 @@
+/home/wangjun/hobby/rust/leet_code/Minimum_Moves_to_Reach_Target_Score/target/debug/Minimum_Moves_to_Reach_Target_Score: /home/wangjun/hobby/rust/leet_code/Minimum_Moves_to_Reach_Target_Score/src/main.rs
