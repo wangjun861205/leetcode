@@ -1,67 +1,65 @@
 struct Solution;
 
-use std::cmp::Reverse;
-use std::collections::HashMap;
-
 impl Solution {
-    fn rc(
-        l_sum: &Vec<((usize, usize), i32)>,
-        m_sum: &Vec<((usize, usize), i32)>,
-        l_idx: usize,
-        m_idx: usize,
-        cache: &mut HashMap<(usize, usize), i32>,
-    ) -> i32 {
-        if l_idx == l_sum.len() || m_idx == m_sum.len() {
-            return 0;
+    fn max_presum(mut presum: Vec<i32>, length: usize) -> Vec<i32> {
+        presum.insert(0, 0);
+        let mut ans = Vec::new();
+        let mut stack = Vec::new();
+        let mut max = 0;
+        for n in presum {
+            stack.push(n);
+            if stack.len() < length + 1 {
+                ans.push(i32::MIN);
+                continue;
+            }
+            if stack.len() > length + 1 {
+                stack.remove(0);
+            }
+            max = max.max(stack[stack.len() - 1] - stack[0]);
+            ans.push(max);
         }
-        let l = l_sum[l_idx];
-        let m = m_sum[m_idx];
-        let (l_start, l_end) = (l.0 .0, l.0 .1);
-        let (m_start, m_end) = (m.0 .0, m.0 .1);
-        if l_end < m_start || m_end < l_start {
-            return l.1 + m.1;
-        } else {
-            let next_l = if let Some(c) = cache.get(&(l_idx + 1, m_idx)) {
-                *c
-            } else {
-                Solution::rc(l_sum, m_sum, l_idx + 1, m_idx, cache)
-            };
-            let next_m = if let Some(c) = cache.get(&(l_idx, m_idx + 1)) {
-                *c
-            } else {
-                Solution::rc(l_sum, m_sum, l_idx, m_idx + 1, cache)
-            };
-            return next_l.max(next_m);
-        }
+        ans
     }
     pub fn max_sum_two_no_overlap(a: Vec<i32>, l: i32, m: i32) -> i32 {
-        let mut l_sum: Vec<((usize, usize), i32)> = a
-            .windows(l as usize)
-            .enumerate()
-            .map(|(i, v)| ((i, i + l as usize - 1), v.into_iter().sum()))
-            .collect();
-        let mut m_sum: Vec<((usize, usize), i32)> = a
-            .windows(m as usize)
-            .enumerate()
-            .map(|(i, v)| ((i, i + m as usize - 1), v.into_iter().sum()))
-            .collect();
-        l_sum.sort_by_key(|v| Reverse(v.1));
-        m_sum.sort_by_key(|v| Reverse(v.1));
-        let mut cache = HashMap::new();
-        Solution::rc(&l_sum, &m_sum, 0, 0, &mut cache)
+        let l = l as usize;
+        let m = m as usize;
+        let forward = a
+            .iter()
+            .scan(0, |s, v| {
+                *s += v;
+                Some(*s)
+            })
+            .collect::<Vec<i32>>();
+        let backward = a
+            .iter()
+            .rev()
+            .scan(0, |s, v| {
+                *s += v;
+                Some(*s)
+            })
+            .collect::<Vec<i32>>();
+        let forward_l_max = Solution::max_presum(forward.clone(), l);
+        let forward_m_max = Solution::max_presum(forward.clone(), m);
+        let mut backward_l_max = Solution::max_presum(backward.clone(), l);
+        let mut backward_m_max = Solution::max_presum(backward.clone(), m);
+        backward_l_max.reverse();
+        backward_m_max.reverse();
+        let mut max = 0;
+        for i in 0..a.len() + 1 {
+            let fl = *forward_l_max.get(i).unwrap_or(&i32::MIN);
+            let fm = *forward_m_max.get(i).unwrap_or(&i32::MIN);
+            let bl = *backward_l_max.get(i).unwrap_or(&i32::MIN);
+            let bm = *backward_m_max.get(i).unwrap_or(&i32::MIN);
+            if fl != i32::MIN && bm != i32::MIN {
+                max = max.max(fl + bm);
+            }
+            if fm != i32::MIN && bl != i32::MIN {
+                max = max.max(fm + bl);
+            }
+        }
+        max
     }
 }
 fn main() {
-    println!(
-        "{}",
-        Solution::max_sum_two_no_overlap(
-            vec![
-                55, 85, 51, 92, 84, 21, 84, 92, 0, 72, 93, 51, 44, 26, 22, 53, 31, 57, 60, 8, 69,
-                13, 27, 86, 14, 92, 47, 62, 11, 99, 54, 5, 16, 51, 27, 85, 37, 73, 16, 51, 36, 29,
-                84, 80, 46, 97, 84, 16, 20, 13
-            ],
-            40,
-            10
-        )
-    );
+    println!("{}", Solution::max_sum_two_no_overlap(vec![1, 0, 3], 1, 2));
 }

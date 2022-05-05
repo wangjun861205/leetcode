@@ -1,0 +1,8 @@
+[package]
+name = "Egg_Drop_With_2_Eggs_and_N_Floors"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
